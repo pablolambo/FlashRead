@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'books_page.dart';
+import 'navigation_bar.dart';
 
 void main() {
   runApp(const FlashReadApp());
@@ -16,7 +17,7 @@ class FlashReadApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFAAFFAA)),
         useMaterial3: true,
       ),
-      home: const BooksPage(),
+      home: const NavigationBarApp(),
     );
   }
 }

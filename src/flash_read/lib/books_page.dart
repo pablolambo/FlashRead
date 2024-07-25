@@ -50,20 +50,8 @@ class _BooksPageState extends State<BooksPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
+        tooltip: 'Add book',
         child: const Icon(Icons.add),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: "Flashcards",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: "Books",
-          ),
-        ],
       ),
     );
   }
