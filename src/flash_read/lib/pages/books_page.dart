@@ -39,6 +39,7 @@ class _BooksPageState extends State<BooksPage> {
         itemBuilder: (context, int index) {
           final book = _books[index];
           return ListTile(
+            leading: Icon(book.icon),
             title: Text(book.title),
             subtitle: Text(book.author),
           );
