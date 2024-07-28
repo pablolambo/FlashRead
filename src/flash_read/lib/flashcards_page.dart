@@ -5,6 +5,10 @@ class FlashcardsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return Scaffold(
+      body: Center(
+        child: Text("Create flashcards while reading"),
+      ),
+    );
   }
 }

@@ -8,16 +8,16 @@ class BooksPage extends StatefulWidget {
 }
 
 class _BooksPageState extends State<BooksPage> {
-  int _counter = 0;
+  List<Widget> _books = [];
 
-  void _incrementCounter() {
+  void _addBook() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      _books.add(const Placeholder());
     });
   }
 
@@ -27,10 +27,6 @@ class _BooksPageState extends State<BooksPage> {
     // by the _incrementCounter method above.
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Books'),
-      ),
       body: Center(
         child: Column(
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
@@ -39,17 +35,17 @@ class _BooksPageState extends State<BooksPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'Add some books',
             ),
             Text(
-              '$_counter',
+              '$_books',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _addBook,
         tooltip: 'Add book',
         child: const Icon(Icons.add),
       ),
