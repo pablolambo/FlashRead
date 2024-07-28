@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'books_page.dart';
-import 'navigation_bar.dart';
+import 'pages/books_page.dart';
+import 'pages/navigation_bar.dart';
 
 void main() {
   runApp(const FlashReadApp());

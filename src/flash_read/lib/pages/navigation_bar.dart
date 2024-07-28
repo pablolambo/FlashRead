@@ -1,5 +1,5 @@
-import 'package:flash_read/books_page.dart';
-import 'package:flash_read/flashcards_page.dart';
+import 'package:flash_read/pages/books_page.dart';
+import 'package:flash_read/pages/flashcards_page.dart';
 import 'package:flutter/material.dart';
 
 class NavigationBarApp extends StatefulWidget {

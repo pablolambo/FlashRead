@@ -1,3 +1,4 @@
+import 'package:flash_read/models/book_model.dart';
 import 'package:flutter/material.dart';
 
 class BooksPage extends StatefulWidget {
@@ -8,7 +9,8 @@ class BooksPage extends StatefulWidget {
 }
 
 class _BooksPageState extends State<BooksPage> {
-  List<Widget> _books = [];
+  List<Book> _books = <Book>[];
+  int _counter = 0;
 
   void _addBook() {
     setState(() {
@@ -17,29 +19,47 @@ class _BooksPageState extends State<BooksPage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _books.add(const Placeholder());
+      _counter++;
+      _books.add(Book(author: "Author $_counter", title: "Title $_counter"));
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-
     return Scaffold(
-      body: Center(
+      body: _books.isEmpty ? showDefault() : showBooks(),
+    );
+  }
+
+  Scaffold showBooks() {
+    return Scaffold(
+      body: ListView.builder(
+        itemCount: _books.length,
+        padding: const EdgeInsets.all(8),
+        itemBuilder: (context, int index) {
+          final book = _books[index];
+          return ListTile(
+            title: Text(book.title),
+            subtitle: Text(book.author),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _addBook,
+        tooltip: 'Add book',
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+  Scaffold showDefault() {
+    return Scaffold(
+      body: const Center(
         child: Column(
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Add some books',
-            ),
             Text(
-              '$_books',
-              style: Theme.of(context).textTheme.headlineMedium,
+              'Add new book',
             ),
           ],
         ),
