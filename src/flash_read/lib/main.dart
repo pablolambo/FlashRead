@@ -13,7 +13,12 @@ class FlashReadApp extends StatelessWidget {
     return MaterialApp(
       title: 'FlashRead',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFAAFFAA)),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 215, 237, 168),
+          primary: const Color.fromARGB(255, 121, 147, 81),
+          secondary: const Color.fromARGB(255, 215, 237, 168),
+          brightness: Brightness.light,
+        ),
         useMaterial3: true,
       ),
       home: const NavigationBarApp(),
