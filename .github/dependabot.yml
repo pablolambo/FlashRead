@@ -1,0 +1,45 @@
+# Dependabot keeps dependencies current and opens pull requests for security fixes.
+# Docs: https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
+version: 2
+
+updates:
+  # Dart / Flutter packages
+  - package-ecosystem: "pub"
+    directory: "/src/flash_read"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Warsaw"
+    open-pull-requests-limit: 5
+    # Wait a week before proposing a fresh release, so a compromised or broken
+    # version has time to be noticed and pulled. Security updates skip this delay.
+    cooldown:
+      default-days: 7
+    # One pull request for all minor and patch bumps; majors stay separate
+    # because they can contain breaking changes and deserve their own review.
+    groups:
+      pub-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    commit-message:
+      prefix: "chore(deps)"
+
+  # Actions used by the workflows in .github/workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/Warsaw"
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "chore(ci)"
