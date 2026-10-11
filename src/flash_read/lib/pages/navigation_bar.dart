@@ -12,7 +12,7 @@ class NavigationBarApp extends StatefulWidget {
 class _NavigationBarAppState extends State<NavigationBarApp> {
   int _selectedIndex = 0;
 
-  List<Widget> pages = [FlashcardsPage(), BooksPage()];
+  List<Widget> pages = [FlashcardsPage(), const BooksPage()];
 
   @override
   Widget build(BuildContext context) {
