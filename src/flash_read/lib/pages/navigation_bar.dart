@@ -18,20 +18,20 @@ class _NavigationBarAppState extends State<NavigationBarApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+            icon: const Icon(Icons.school),
             label: "Flashcards",
-            backgroundColor: Color(0xFFAAFFAA),
+            backgroundColor: Theme.of(context).colorScheme.primary,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.book),
+            icon: const Icon(Icons.book),
             label: "Books",
-            backgroundColor: Color(0xFFAAFFAA),
+            backgroundColor: Theme.of(context).colorScheme.primary,
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: const Color(0xFFAAFFAA),
+        selectedItemColor: Theme.of(context).colorScheme.primary,
         onTap: _onItemTapped,
       ),
       body: pages.elementAt(_selectedIndex),
