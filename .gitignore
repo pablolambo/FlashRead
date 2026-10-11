@@ -4,8 +4,6 @@
 .dart_tool/
 .packages
 build/
-# If you're building an application, you may want to check-in your pubspec.lock
-pubspec.lock
 
 # Directory created by dartdoc
 # If you don't generate documentation locally you can remove this line.
@@ -29,6 +27,8 @@ doc/api/
 # Miscellaneous
 *.class
 *.lock
+# Applications commit pubspec.lock so every build resolves the same versions.
+!pubspec.lock
 *.log
 *.pyc
 *.swp
