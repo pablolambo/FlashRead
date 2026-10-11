@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class FlashcardsPage extends StatelessWidget {
   FlashcardsPage({super.key});
-  List<Flashcard> _flashcards = <Flashcard>[];
+  final List<Flashcard> _flashcards = <Flashcard>[];
 
   @override
   Widget build(BuildContext context) {

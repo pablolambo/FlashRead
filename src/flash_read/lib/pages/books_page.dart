@@ -9,7 +9,7 @@ class BooksPage extends StatefulWidget {
 }
 
 class _BooksPageState extends State<BooksPage> {
-  List<Book> _books = <Book>[];
+  final List<Book> _books = <Book>[];
   int _counter = 0;
 
   void _addBook() {
