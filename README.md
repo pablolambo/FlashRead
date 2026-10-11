@@ -58,7 +58,7 @@ flutter run
 ## Contributing
 
 Issues and pull requests are welcome — small, focused pull requests are the easiest to review.
-Before opening one, please run `flutter analyze` and `flutter test`.
+See [CONTRIBUTING.md](CONTRIBUTING.md) to get started, and [good first issues](https://github.com/pablolambo/FlashRead/labels/good%20first%20issue) for a place to begin.
 
 ## License
 
